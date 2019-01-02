@@ -167,6 +167,11 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
+" @dimanyc vimrc
+if filereadable(expand("~/.vimrc.dimanyc"))
+  source ~/.vimrc.dimanyc
+endif
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
