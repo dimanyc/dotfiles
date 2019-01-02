@@ -3,6 +3,13 @@ thoughtbot dotfiles
 
 ![prompt](http://images.thoughtbot.com/thoughtbot-dotfiles-prompt.png)
 
+@dimanyc additions
+------------
+
+- adds [`flazz/vim-colorschemes`](https://github.com/flazz/vim-colorschemes)
+- adds [`thoughtbot/vim-rspec`](https://github.com/thoughtbot/vim-rspec)
+- sets default colorscheme to [`molokai`](https://github.com/tomasr/molokai)
+
 Requirements
 ------------
 
