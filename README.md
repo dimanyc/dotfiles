@@ -8,6 +8,7 @@ thoughtbot dotfiles
 
 - adds [`flazz/vim-colorschemes`](https://github.com/flazz/vim-colorschemes)
 - adds [`thoughtbot/vim-rspec`](https://github.com/thoughtbot/vim-rspec)
+- adds my aliases
 - sets default colorscheme to [`molokai`](https://github.com/tomasr/molokai)
 
 Requirements
