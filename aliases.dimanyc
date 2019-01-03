@@ -1,0 +1,9 @@
+# Rails
+alias be='bundle exec '
+alias bers='bundle exec rails s'
+alias berc='bundle exec rails c'
+alias berr='bundle exec rake routes'
+alias berm='bundle exec rake db:migrate'
+alias bberm='bundle && bundle exec rake db:migrate && bundle exec rails server'
+alias fsp='pkill -9 -f puma'
+

@@ -15,5 +15,8 @@ alias s="rspec"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# Include @dimanyc aliass
+[[ -f ~/.aliases.dimanyc ]] && source ~/.aliases.dimanyc
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
