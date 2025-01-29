@@ -1,5 +1,6 @@
 # ~/.zshrc
 
+
 # Starship prompt
 eval "$(starship init zsh)"
 
@@ -8,11 +9,17 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# asdf configuration
-export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/asdfrc"
-export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+. $HOME/.dotfiles/.config/asdf/asdf.sh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
+. $ASDF_DIR/plugins/golang/set-env.zsh
 
 # aliases
 source ~/.zsh_aliases
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+# Brew to PATH
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

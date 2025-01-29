@@ -1,6 +1,1 @@
-# Enable legacy version file
 legacy_version_file = yes
-# Use the new nodejs version file
-nodejs_version_file = .node-version
-# Use download timeout of 10 minutes
-download_timeout = 600
