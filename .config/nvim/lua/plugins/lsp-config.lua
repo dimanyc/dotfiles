@@ -13,23 +13,24 @@ return {
 
       -- Server configurations
       local servers = {
-        ruby_lsp = {
-          init_options = {
-            formatter = "rubyfmt",
-            linters = { "rubyfmt" },
-          },
-          cmd = { "bundle", "exec", "ruby-lsp" },
-          filetypes = { "ruby" },
-          root_dir = require("lspconfig.util").root_pattern("Gemfile", ".git"),
-          settings = {
-            ruby = {
-              completion = {
-                autoRequire = "enabled",
-                useBundler = "enabled",
-              },
-            },
-          },
-        },
+        solargraph = {},
+        -- ruby_lsp = {
+        --   init_options = {
+        --     formatter = "rubocop",
+        --     linters = { "rubocop" },
+        --   },
+        --   cmd = { "bundle", "exec", "ruby-lsp" },
+        --   filetypes = { "ruby" },
+        --   root_dir = require("lspconfig.util").root_pattern("Gemfile", ".git"),
+        --   settings = {
+        --     ruby = {
+        --       completion = {
+        --         autoRequire = "enabled",
+        --         useBundler = "enabled",
+        --       },
+        --     },
+        --   },
+        -- },
         tailwindcss = {},
         lua_ls = {
           settings = {

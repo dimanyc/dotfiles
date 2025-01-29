@@ -2,7 +2,7 @@
 
 set -e
 
-DOTFILES="$HOME/dotfiles"
+DOTFILES="$HOME/.dotfiles"
 CONFIG_DIR="$HOME/.config"
 
 # Colors for output
@@ -58,11 +58,37 @@ mkdir -p "$HOME/.local/share/tmux/plugins"
 
 # Symlink configurations
 log "Creating symlinks..."
+
+# Define an array of symlinks to create
+declare -A symlinks=(
+    ["$HOME/.asdf"]="$DOTFILES/.config/asdf"
+    ["$HOME/.config"]="$DOTFILES/.config"
+    ["$HOME/.tmux"]="$DOTFILES/.config/tmux"
+    ["$HOME/.tmux.conf"]="$DOTFILES/.config/tmux/tmux.conf"
+    ["$HOME/.zshrc"]="$DOTFILES/.config/zsh/.zshrc"
+)
+
+# Create symlinks
+for target in "${!symlinks[@]}"; do
+    source="${symlinks[$target]}"
+    
+    # Remove existing file/directory/symlink if it exists
+    if [ -e "$target" ] || [ -L "$target" ]; then
+        log "Removing existing $target"
+        rm -rf "$target"
+    fi
+    
+    # Create the symlink
+    log "Creating symlink: $target -> $source"
+    ln -sf "$source" "$target"
+done
+
+# Create traditional config directory symlinks
 for dir in nvim alacritty cspell tmux; do
-  if [ -d "$DOTFILES/.config/$dir" ]; then
-    ln -sf "$DOTFILES/.config/$dir" "$CONFIG_DIR/$dir"
-    log "Linked $dir configuration"
-  fi
+    if [ -d "$DOTFILES/.config/$dir" ]; then
+        ln -sf "$DOTFILES/.config/$dir" "$CONFIG_DIR/$dir"
+        log "Linked $dir configuration"
+    fi
 done
 
 # Install Tmux Plugin Manager
