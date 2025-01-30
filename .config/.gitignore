@@ -1,1 +1,13 @@
-github-copilot/apps.json
+.DS_Store
+.nvim.lua
+*.swp
+*.swo
+*.swn
+node_modules/
+.env
+/log/*
+/tmp/*
+/yarn-error.log
+yarn-debug.log*
+/storage/*
+.config/github-copilot/apps.json
