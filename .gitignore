@@ -2,3 +2,4 @@
 *.log
 .cache/
 node_modules/
+.nvmrc

@@ -20,7 +20,7 @@ return {
       lua = { "stylua" },
       javascript = { "prettier", "eslint_d", stop_after_first = true },
       typescript = { "prettier", "eslint_d", stop_after_first = true },
-      typescriptreact = { "prettier", "eslint_d", stop_after_first = true },
+      typescriptreact = { "prettierd", "prettier", stop_after_first = true },
       javascriptreact = { "prettier", "eslint_d", stop_after_first = true },
       ruby = { "rubocop" },
       eruby = { "erb_format" }, -- Use erb_lint instead of erb_format

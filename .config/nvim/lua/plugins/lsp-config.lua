@@ -13,24 +13,14 @@ return {
 
       -- Server configurations
       local servers = {
-        solargraph = {},
-        -- ruby_lsp = {
-        --   init_options = {
-        --     formatter = "rubocop",
-        --     linters = { "rubocop" },
-        --   },
-        --   cmd = { "bundle", "exec", "ruby-lsp" },
-        --   filetypes = { "ruby" },
-        --   root_dir = require("lspconfig.util").root_pattern("Gemfile", ".git"),
+        -- eslint_lsp = {
         --   settings = {
-        --     ruby = {
-        --       completion = {
-        --         autoRequire = "enabled",
-        --         useBundler = "enabled",
-        --       },
-        --     },
-        --   },
+        --     packageManager = 'yarn'
+        --   }
         -- },
+
+        ts_ls = {},
+        solargraph = {},
         tailwindcss = {},
         lua_ls = {
           settings = {
