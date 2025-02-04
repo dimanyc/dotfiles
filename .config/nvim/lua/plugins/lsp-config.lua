@@ -13,14 +13,42 @@ return {
 
       -- Server configurations
       local servers = {
-        -- eslint_lsp = {
-        --   settings = {
-        --     packageManager = 'yarn'
-        --   }
-        -- },
-
         ts_ls = {},
-        solargraph = {},
+        ruby_lsp = {
+          cmd = { "doppler", "run", "bundle", "exec", "ruby-lsp" }, -- changed to use bundler
+          filetypes = { "ruby", "eruby", "erb" },                   -- includes erb filetypes
+          root_dir = require("lspconfig.util").root_pattern("Gemfile", ".git"),
+          init_options = {
+            formatter = "auto",
+            enabledFeatures = {
+              "codeActions",
+              "codeLens",
+              "completion",
+              "definition",
+              "diagnostics",
+              "documentHighlights",
+              "documentLink",
+              "documentSymbols",
+              "foldingRanges",
+              "formatting",
+              "hover",
+              "inlayHint",
+              "onTypeFormatting",
+              "selectionRanges",
+              "semanticHighlighting",
+              "signatureHelp",
+              "typeHierarchy",
+              "workspaceSymbol",
+            },
+          },
+          settings = {
+            formatter = {
+              rubyfmt = {
+                enabled = true,
+              }
+            }
+          }
+        },
         tailwindcss = {},
         lua_ls = {
           settings = {

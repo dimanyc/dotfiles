@@ -11,6 +11,7 @@ return {
     local config = {
       cspell_config_dirs = { "~/.config/cspell" },
     }
+    local helpers = require("null-ls.helpers")
 
     null_ls.setup({
       sources = {
@@ -19,17 +20,18 @@ return {
         cspell.code_actions.with({ config = config }),
 
         -- Linters
-        null_ls.builtins.diagnostics.erb_lint,
-        null_ls.builtins.diagnostics.rubocop,
+        -- null_ls.builtins.diagnostics.rubocop,
         -- null_ls.builtins.diagnostics.rubocop,
         -- null_ls.builtins.diagnostics.shfmt,
         -- null_ls.builtins.diagnostics.shellcheck,
+        null_ls.builtins.diagnostics.rubocop,
 
         -- Formatters
+        -- null_ls.builtins.formatting.rubocop,
         -- null_ls.builtins.formatting.stylua,
         -- null_ls.builtins.formatting.prettierd,
         -- null_ls.builtins.formatting.shfmt,
-        null_ls.builtins.formatting.rubocop
+        -- null_ls.builtins.formatting.rubocop
       },
       debug = true,
     })

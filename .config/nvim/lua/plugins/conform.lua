@@ -23,13 +23,12 @@ return {
       typescriptreact = { "prettierd", "prettier", stop_after_first = true },
       javascriptreact = { "prettier", "eslint_d", stop_after_first = true },
       ruby = { "rubocop" },
-      eruby = { "erb_format" }, -- Use erb_lint instead of erb_format
+      eruby = { "erb_format" },
       zsh = { "shfmt", "shellcheck" },
       bash = { "shfmt", "shellcheck" },
       sh = { "shfmt", "shellcheck" },
     },
     formatters = {
-      erb_format = {},
       shfmt = {
         prepend_args = { "-i", "2" },
       },
