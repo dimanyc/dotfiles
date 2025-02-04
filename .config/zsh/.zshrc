@@ -1,5 +1,8 @@
 # ~/.zshrc
-
+ 
+# Plugin management
+source ~/.dotfiles/.config/zsh/plugins/antidote/antidote.zsh
+antidote load
 
 # Starship prompt
 eval "$(starship init zsh)"
@@ -12,7 +15,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 . $HOME/.dotfiles/.config/asdf/asdf.sh
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
+# initialize completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
 . $ASDF_DIR/plugins/golang/set-env.zsh

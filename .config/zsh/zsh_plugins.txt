@@ -1,0 +1,2 @@
+zsh-users/zsh-autosuggestions.git
+zsh-users/zsh-syntax-highlighting.git
