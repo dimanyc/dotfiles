@@ -20,26 +20,22 @@ return {
         cspell.code_actions.with({ config = config }),
 
         -- Linters
-        -- null_ls.builtins.diagnostics.rubocop,
-        -- null_ls.builtins.diagnostics.rubocop,
-        -- null_ls.builtins.diagnostics.shfmt,
-        -- null_ls.builtins.diagnostics.shellcheck,
         null_ls.builtins.diagnostics.rubocop,
-
-        -- Formatters
-        -- null_ls.builtins.formatting.rubocop,
-        -- null_ls.builtins.formatting.stylua,
-        -- null_ls.builtins.formatting.prettierd,
-        -- null_ls.builtins.formatting.shfmt,
-        -- null_ls.builtins.formatting.rubocop
+        null_ls.builtins.diagnostics.erb_lint.with({
+          filetypes = { "eruby", "erb" },
+          command = "bundle",
+          args = function(params)
+            return { "exec", "erb_lint", "--format", "json", "--stdin", params.bufname }
+          end,
+        }),
       },
       debug = true,
     })
 
-    -- Format on pressing <leader>d
+    -- -- Format on pressing <leader>d
     -- vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
-
-    -- Optional: Format on save (modified to exclude Ruby/ERB)
+    --
+    -- -- Optional: Format on save (modified to exclude Ruby/ERB)
     -- vim.api.nvim_create_autocmd("BufWritePre", {
     --   callback = function()
     --     vim.lsp.buf.format()

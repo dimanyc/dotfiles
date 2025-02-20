@@ -14,12 +14,16 @@ return {
       -- Server configurations
       local servers = {
         ts_ls = {},
+        -- biome = {},
         ruby_lsp = {
           cmd = { "doppler", "run", "bundle", "exec", "ruby-lsp" }, -- changed to use bundler
           filetypes = { "ruby", "eruby", "erb" },                   -- includes erb filetypes
           root_dir = require("lspconfig.util").root_pattern("Gemfile", ".git"),
           init_options = {
             formatter = "auto",
+            linters = {
+              'rubocop', 'erb-lint'
+            },
             enabledFeatures = {
               "codeActions",
               "codeLens",
@@ -41,14 +45,15 @@ return {
               "workspaceSymbol",
             },
           },
-          settings = {
-            formatter = {
-              rubyfmt = {
-                enabled = true,
-              }
-            }
-          }
+          -- settings = {
+          --   formatter = {
+          --     rubyfmt = {
+          --       enabled = true,
+          --     }
+          --   }
+          -- }
         },
+        -- solargraph = {},
         tailwindcss = {},
         lua_ls = {
           settings = {
