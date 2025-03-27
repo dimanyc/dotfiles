@@ -1,5 +1,6 @@
 # ~/.zshrc
- 
+
+export EDITOR="nvim"
 # Plugin management
 source ~/.dotfiles/.config/zsh/plugins/antidote/antidote.zsh
 antidote load

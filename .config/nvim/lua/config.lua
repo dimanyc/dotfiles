@@ -9,6 +9,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 vim.cmd("set shell=/bin/zsh")
+vim.cmd("setlocal spell spelllang=en_us")
 
 -- Function to suspend Neovim and run a shell command
 local function suspend_and_run(command)

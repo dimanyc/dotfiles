@@ -20,7 +20,7 @@ return {
       lua = { "stylua" },
       javascript = { "prettier", "eslint_d", stop_after_first = true },
       typescript = { "prettier", "eslint_d", stop_after_first = true },
-      typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+      typescriptreact = { "prettierd", "prettier", "eslint", stop_after_first = true },
       -- typescriptreact = { "biome" },
       javascriptreact = { "prettier", "eslint_d", stop_after_first = true },
       ruby = { "rubocop" },
@@ -29,6 +29,7 @@ return {
       bash = { "shfmt", "shellcheck" },
       sh = { "shfmt", "shellcheck" },
       css = { "prettierd" },
+      json = { "prettierd" },
     },
     formatters = {
       shfmt = {

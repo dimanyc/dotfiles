@@ -10,3 +10,6 @@ timeSpan
 flex
 startDate
 endDate
+QueryResult
+refetching
+const

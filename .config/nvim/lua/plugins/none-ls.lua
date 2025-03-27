@@ -16,8 +16,8 @@ return {
     null_ls.setup({
       sources = {
         -- Spelling and general sources
-        cspell.diagnostics.with({ config = config }),
-        cspell.code_actions.with({ config = config }),
+        -- cspell.diagnostics.with({ config = config }),
+        -- cspell.code_actions.with({ config = config }),
 
         -- Linters
         null_ls.builtins.diagnostics.rubocop,
