@@ -34,7 +34,8 @@
     "enneemme",
     "lineville",
     "tsibog",
-    "viethung0823"
+    "viethung0823",
+    "eyal_levy"
   ],
   "pastContributors": [
     "bkeys818"
@@ -606,6 +607,22 @@
         ]
       },
       "confirmation": false
+    },
+    {
+      "name": "queue",
+      "title": "Queue",
+      "description": "Add tracks to queue and get the current queue state",
+      "input": {
+        "type": "object",
+        "properties": {
+          "trackId": {
+            "type": "string",
+            "description": "The ID of the track to add to the queue\nID's look like this '3TVXtAsR1Inumwj472S9r4'."
+          }
+        },
+        "required": []
+      },
+      "confirmation": false
     }
   ],
   "dependencies": {
@@ -801,5 +818,8 @@
         }
       }
     ]
-  }
+  },
+  "platforms": [
+    "macOS"
+  ]
 }

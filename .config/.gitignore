@@ -1,4 +1,4 @@
-.DS_Store
+*.DS_Store
 .nvim.lua
 *.swp
 *.swo
@@ -11,3 +11,4 @@ node_modules/
 yarn-debug.log*
 /storage/*
 .config/github-copilot/apps.json
+.DS_Store

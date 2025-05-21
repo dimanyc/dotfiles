@@ -16,6 +16,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # aliases
 source ~/.zsh_aliases
 
+# secrets
+source ~/.secrets.zsh
+
 # Brew to PATH
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
@@ -26,3 +29,4 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 eval "$(mise activate zsh)"
+export PATH=~/.npm-global/bin:$PATH

@@ -1,0 +1,40 @@
+return {
+  -- {
+  --   "nvim-neotest/neotest",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-neotest/neotest-plenary",
+  --     "nvim-neotest/neotest-jest",
+  --     "olimorris/neotest-rspec",
+  --     -- "stevearc/overseer.nvim",
+  --   },
+  --   -- opts = {
+  --   --   --
+  --   --   -- adapters = { "neotest-plenary", "neotest-jest", "neotest-rspec" },
+  --   --   --   overseer = require("neotest.consumers.overseer"),
+  --   -- -- consumers = {
+  --   --   -- },
+  --   --   -- overseer = {
+  --   --   --   enabled = true,
+  --   --   --   -- When this is true (the default), it will replace all neotest.run.* commands
+  --   --   --   force_default = false,
+  --   --   -- },
+  --   --   -- -- quickfix = {
+  --   --   -- --   open = function()
+  --   --   -- --     if LazyVim.has("trouble.nvim") then
+  --   --   -- --       require("trouble").open({ mode = "quickfix", focus = true })
+  --   --   -- --     else
+  --   --   -- --       vim.cmd("copen")
+  --   --   -- --     end
+  --   --   -- --   end,
+  --   --   -- -- },
+  --   -- },
+  --   opts = function(_, opts)
+  --     opts = opts or {}
+  --     -- opts.consumers = opts.consumers or {}
+  --     -- opts.consumers.overseer = require("neotest.consumers.overseer")
+  --     opts.adapters = opts.adapters or {}
+  --     opts.adapters = { "neotest-plenary", "neotest-jest", "neotest-rspec" }
+  --   end,
+  -- },
+}
