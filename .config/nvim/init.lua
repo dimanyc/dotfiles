@@ -632,20 +632,35 @@ require('lazy').setup({
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
         } or {},
-        virtual_text = {
-          source = 'if_many',
-          spacing = 2,
-          format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
-          end,
-        },
+        virtual_text = false,
+        -- virtual_text = {
+        --   source = 'if_many',
+        --   spacing = 2,
+        --   format = function(diagnostic)
+        --     local diagnostic_message = {
+        --       [vim.diagnostic.severity.ERROR] = diagnostic.message,
+        --       [vim.diagnostic.severity.WARN] = diagnostic.message,
+        --       [vim.diagnostic.severity.INFO] = diagnostic.message,
+        --       [vim.diagnostic.severity.HINT] = diagnostic.message,
+        --     }
+        --     return diagnostic_message[diagnostic.severity]
+        --   end,
+        -- },
       }
+      vim.api.nvim_create_autocmd('CursorHold', {
+        group = vim.api.nvim_create_augroup('LspDiagnosticsFloat', { clear = true }),
+        callback = function()
+          -- show only if there’s a diagnostic under cursor
+          if #vim.diagnostic.get(0, { lnum = vim.api.nvim_win_get_cursor(0)[1] - 1 }) > 0 then
+            vim.diagnostic.open_float(nil, {
+              focusable = false,
+              close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
+              border = 'rounded',
+              source = 'if_many',
+            })
+          end
+        end,
+      })
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
@@ -676,6 +691,39 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        ruby_lsp = {
+          cmd = { 'mise', 'x', '--', 'ruby-lsp' },
+          filetypes = { 'ruby', 'eruby' },
+          init_options = {
+            enabled_features = {
+              'codeActions',
+              'codeLens',
+              'completion',
+              'definition',
+              'diagnostics',
+              'documentHighlights',
+              'documentLink',
+              'documentSymbols',
+              'foldingRanges',
+              'formatting',
+              'hover',
+              'inlayHint',
+              'onTypeFormatting',
+              'selectionRanges',
+              'semanticHighlighting',
+              'signatureHelp',
+              'typeHierarchy',
+              'workspaceSymbol',
+            },
+            -- formatter = 'rubocop',
+            -- linters = { 'rubocop' },
+            addonSettings = {
+              ['Ruby LSP Rails'] = {
+                enablePendingMigrationsPrompt = false,
+              },
+            },
+          },
+        },
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
