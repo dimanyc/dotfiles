@@ -808,7 +808,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         typescriptreact = { 'prettierd', 'eslint_d' },
-        ruby = { 'standardrb', 'rubocop', stop_after_first = true },
+        ruby = { 'rubocop' },
         eruby = { 'erb_format' },
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
