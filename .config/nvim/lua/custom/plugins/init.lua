@@ -127,4 +127,7 @@ return {
       }
     end,
   },
+  {
+    'duane9/nvim-rg',
+  },
 }

@@ -691,39 +691,42 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
-        ruby_lsp = {
-          cmd = { 'mise', 'x', '--', 'ruby-lsp' },
-          filetypes = { 'ruby', 'eruby' },
-          init_options = {
-            enabled_features = {
-              'codeActions',
-              'codeLens',
-              'completion',
-              'definition',
-              'diagnostics',
-              'documentHighlights',
-              'documentLink',
-              'documentSymbols',
-              'foldingRanges',
-              'formatting',
-              'hover',
-              'inlayHint',
-              'onTypeFormatting',
-              'selectionRanges',
-              'semanticHighlighting',
-              'signatureHelp',
-              'typeHierarchy',
-              'workspaceSymbol',
-            },
-            -- formatter = 'rubocop',
-            -- linters = { 'rubocop' },
-            addonSettings = {
-              ['Ruby LSP Rails'] = {
-                enablePendingMigrationsPrompt = false,
-              },
-            },
-          },
-        },
+        -- ruby_lsp = {
+        --   cmd = { 'mise', 'x', '--', 'ruby-lsp' },
+        --   filetypes = { 'ruby', 'eruby' },
+        --   init_options = {
+        --     enabled_features = {
+        --       'codeActions',
+        --       'codeLens',
+        --       'completion',
+        --       'definition',
+        --       'diagnostics',
+        --       'documentHighlights',
+        --       'documentLink',
+        --       'documentSymbols',
+        --       'foldingRanges',
+        --       'formatting',
+        --       'hover',
+        --       'inlayHint',
+        --       'onTypeFormatting',
+        --       'selectionRanges',
+        --       'semanticHighlighting',
+        --       'signatureHelp',
+        --       'typeHierarchy',
+        --       'workspaceSymbol',
+        --     },
+        --     -- formatter = 'rubocop',
+        --     -- linters = { 'rubocop' },
+        --     addonSettings = {
+        --       ['Ruby LSP Rails'] = {
+        --         enablePendingMigrationsPrompt = false,
+        --       },
+        --     },
+        --   },
+        -- },
+        -- ruby_lsp = {
+        --   mason = false,
+        -- },
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -807,10 +810,12 @@ require('lazy').setup({
         end
       end,
       formatters_by_ft = {
+        javascriptreact = { 'prettierd', 'eslint_d' },
         typescriptreact = { 'prettierd', 'eslint_d' },
         ruby = { 'rubocop' },
         eruby = { 'erb_format' },
         lua = { 'stylua' },
+        go = { 'goimports', 'gofmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
