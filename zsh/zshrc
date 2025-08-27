@@ -1,0 +1,14 @@
+export EDITOR="nvim"
+eval "$(~/.local/bin/mise activate)"
+
+# Plugin management
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+# XDG Base Directory Specification
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
