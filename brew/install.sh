@@ -16,6 +16,7 @@ apps=(
   alacritty
   antidote
   ca-certificates
+  font-hack-nerd-font
   gettext
   gmp
   libevent
