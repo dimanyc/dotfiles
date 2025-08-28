@@ -7,9 +7,9 @@ config.font = wezterm.font("Hack Nerd Font")
 config.font_size = 19
 config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "main", "zsh" }
 config.automatically_reload_config = true
+config.enable_tab_bar = false
 config.audible_bell = "Disabled"
 config.keys = {
-	-- Rebind OPT-Left, OPT-Right as ALT-b, ALT-f respectively to match Terminal.app behavior
 	{
 		key = "LeftArrow",
 		mods = "OPT",
