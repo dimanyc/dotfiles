@@ -38,9 +38,12 @@ apps=(
   pkgconf
   postgresql@14
   python@3.13
+	raycast
   readline
   ripgrep
   rust
+	slack
+	spotify
   sqlite
   starship
   tmux
