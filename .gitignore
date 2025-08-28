@@ -2,3 +2,6 @@
 *.log
 .cache/
 node_modules/
+
+config/nvim/lazy-lock.json
+config/github-copilot
