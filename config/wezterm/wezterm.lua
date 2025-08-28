@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
+local mux = wezterm.mux
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
 config.font = wezterm.font("Hack Nerd Font")
@@ -24,5 +25,16 @@ config.keys = {
 		action = act.SendKey({ key = "f", mods = "ALT" }),
 	},
 }
+config.set_environment_variables = {
+	PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+}
+
+config.initial_rows = 24
+config.initial_cols = 80
+
+wezterm.on("gui-startup", function()
+	local tab, pane, window = mux.spawn_window({})
+	window:gui_window():maximize()
+end)
 
 return config
