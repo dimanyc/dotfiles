@@ -11,6 +11,21 @@ return {
     'github/copilot.vim',
   },
   {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    dependencies = {
+      { 'nvim-lua/plenary.nvim', branch = 'master' },
+    },
+    build = 'make tiktoken',
+    keys = {
+      { '<leader>cc', '<cmd>CopilotChatOpen<cr>', desc = 'Open Copilot Chat' },
+      { '<leader>ce', ':CopilotChatExplain<cr>', mode = 'v', desc = 'Explain selected code' },
+      opts = {
+        enable_tool_calling = true,
+        -- See the configuration section below
+      },
+    },
+  },
+  {
     'vim-test/vim-test',
     dependencies = {
       'preservim/vimux',

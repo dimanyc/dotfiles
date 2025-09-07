@@ -1,3 +1,6 @@
+autoload -Uz compinit
+compinit
+
 export EDITOR="nvim"
 eval "$(~/.local/bin/mise activate)"
 
@@ -12,3 +15,6 @@ eval "$(starship init zsh)"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+# Env vars from 1password
+[ -f "$HOME/.zshrc_env_vars" ] && source "$HOME/.zshrc_env_vars"
