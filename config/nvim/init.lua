@@ -1028,5 +1028,14 @@ require('lazy').setup({
   },
 })
 
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.shiftround = true
+vim.opt.softtabstop = 2
+
+vim.opt.sps = './spell/sugg,best'
+vim.cmd 'set spell spelllang=en_us syntax=off'
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
