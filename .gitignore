@@ -7,5 +7,6 @@ config/nvim/lazy-lock.json
 config/github-copilot
 config/raycast
 config/containers
+config/colima
 
 zshrc_env_vars
