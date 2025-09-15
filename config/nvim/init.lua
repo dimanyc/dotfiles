@@ -1034,7 +1034,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftround = true
 vim.opt.softtabstop = 2
 
-vim.opt.sps = './spell/sugg,best'
+vim.opt.sps = 'file:./spell/sugg,best'
 vim.cmd 'set spell spelllang=en_us syntax=off'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
