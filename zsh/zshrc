@@ -18,3 +18,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # Env vars from 1password
 [ -f "$HOME/.zshrc_env_vars" ] && source "$HOME/.zshrc_env_vars"
+
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
