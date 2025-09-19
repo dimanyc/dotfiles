@@ -11,3 +11,10 @@ Meraki
 kwargs
 timestamp
 arg
+Neovim
+unicode
+nvim
+lua
+config
+keymaps
+gitsigns
