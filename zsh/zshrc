@@ -19,5 +19,16 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # Env vars from 1password
 [ -f "$HOME/.zshrc_env_vars" ] && source "$HOME/.zshrc_env_vars"
 
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
+# Word-wise movement
+bindkey -M viins '^[b' backward-word
+bindkey -M viins '^[f' forward-word
+bindkey -M viins '^[[1;3D' backward-word   # Alt+Left
+bindkey -M viins '^[[1;3C' forward-word   # Alt+Right
+
+# Optional: history search on Alt+Up/Down
+bindkey -M viins '^[[1;3A' up-line-or-history
+bindkey -M viins '^[[1;3B' down-line-or-history
+
+# Alt+Backspace → delete-word backward
+bindkey -M viins '^[^?' backward-kill-word
+bindkey -M viins '^H'   backward-kill-word
