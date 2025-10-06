@@ -18,3 +18,5 @@ lua
 config
 keymaps
 gitsigns
+str
+bool
