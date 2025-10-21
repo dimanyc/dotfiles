@@ -20,3 +20,5 @@ keymaps
 gitsigns
 str
 bool
+meraki
+async

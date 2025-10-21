@@ -1034,8 +1034,34 @@ vim.opt.tabstop = 2
 vim.opt.shiftround = true
 vim.opt.softtabstop = 2
 
-vim.opt.sps = 'file:./spell/sugg,best'
+-- vim.opt.sps = 'file:~/dotfiles/config/nvim/spell/sugg,best'
 vim.cmd 'set spell spelllang=en_us syntax=off'
+
+-- Insert a language-specific debug snippet on <leader>d
+-- ruby      -> require 'pry'; binding.pry
+-- python    -> import pdb; pdb.set_trace()
+-- js/ts(*)  -> console.log('<word>', <word>)
+local function insert_debug_snippet()
+  local ft = vim.bo.filetype
+  local snippet
+  if ft == 'ruby' then
+    snippet = "require 'pry'; binding.pry"
+  elseif ft == 'python' then
+    snippet = 'import pdb; pdb.set_trace()'
+  elseif ft == 'javascript' or ft == 'javascriptreact' or ft == 'typescript' or ft == 'typescriptreact' then
+    local word = vim.fn.expand '<cword>'
+    if word == '' then
+      word = 'value'
+    end
+    snippet = "console.log('" .. word .. "', " .. word .. ')'
+  else
+    vim.notify('No debug snippet defined for filetype: ' .. ft, vim.log.levels.WARN)
+    return
+  end
+  local row = vim.api.nvim_win_get_cursor(0)[1]
+  vim.api.nvim_buf_set_lines(0, row, row, true, { snippet })
+end
+vim.keymap.set('n', '<leader>d', insert_debug_snippet, { desc = 'Insert debug snippet' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
